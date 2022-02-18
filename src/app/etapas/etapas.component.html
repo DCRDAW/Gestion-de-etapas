@@ -1,0 +1,25 @@
+<form id="altaEtapa" [formGroup]="formulario" (ngSubmit)="anyadir()">
+    <h1>Añadir Etapa</h1>
+    <label for="nombre">IdEtapa: </label><br />
+    <input id="idEtapa" type="text" placeholder="1..." formControlName="idEtapa"><br />
+    <div *ngIf="idEtapa.invalid && (idEtapa.dirty )">
+        hola
+    </div>
+    <label for="dur">Duración: </label><br />
+    <input id="dur" type="text" placeholder="3:40..." formControlName="duracion"><br />
+    <div *ngIf="duracion.invalid && (duracion.dirty )">
+        hola
+    </div>
+    <label for="long">Longitud (en kilometros): </label><br />
+    <input id="long" type="text" placeholder="1km..." formControlName="longitud"><br />
+    <div *ngIf="longitud.invalid && (idEtapa.dirty )">
+        hola
+    </div>
+    <label for="img">Imagen de la etapa: </label><br />
+    <input id="img" type="file"  formControlName="img"><br />
+    <div *ngIf="idEtapa.invalid && (idEtapa.dirty )">
+        hola
+    </div>
+    <input type="submit" value="Enviar">
+    <p>Valor: {{ formulario.value }}</p>
+</form>
