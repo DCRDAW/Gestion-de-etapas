@@ -1,0 +1,98 @@
+form{
+  border: 2px solid #2FA95C;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:#FDBD0D;
+}
+
+h1{
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+/*
+Amarillo: #FDBD0D
+Verde:    #39D070
+*/
+
+input{
+  height: 25px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 2px solid #2FA95C;
+  margin-bottom: 12px;
+  background-color: #39D070;
+  width: 290px;
+}
+
+input::placeholder{
+  color: green;
+}
+
+#btnAnadir{
+  width: 200px;
+  border-radius: 10px;
+  margin: auto;
+  padding: 8px 35px 28px 35px;
+  vertical-align: center;
+  font-size: 16px;
+  color: darkgreen;
+  font-weight: bold;
+}
+
+#insertarArchivo{
+  height: 20px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 2px solid #2FA95C;
+  margin-bottom: 15px;
+  background-color: #39D070;
+  width: 290px;
+  color: green;
+  font-size: 15px;
+}
+
+#img{
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#img + label {
+    font-size: 15px;
+    color: #727272;
+    border: 2px solid #218C48;
+    background-color: #35E174;
+    color: green;
+    display: inline-block;
+    padding: 1px 10px;
+    border-radius: 15px;
+    float: right;
+    margin: -2px -3px 0px 0px;
+}
+
+#img:focus + label,
+#img + label:hover {
+    background-color: #2B9753;
+    color: black;
+}
+
+#img + label {
+	cursor: pointer;
+}
+
+.errorDatos{
+  margin: -25px 0px 20px 0px;
+  font-size: 12px;
+  color: #DF0400;
+}
