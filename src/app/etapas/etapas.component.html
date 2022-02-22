@@ -1,25 +1,26 @@
 <form id="altaEtapa" [formGroup]="formulario" (ngSubmit)="anyadir()">
-    <h1>Añadir Etapa</h1>
-    <label for="nombre">IdEtapa: </label><br />
-    <input id="idEtapa" type="text" placeholder="1..." formControlName="idEtapa"><br />
-    <div *ngIf="idEtapa.invalid && (idEtapa.dirty )">
-        hola
+    <h1>AÑADIR ETAPA</h1>
+    <input id="idEtapa" type="text" placeholder="Identificador de la Etapa" formControlName="idEtapa"><br />
+    <div class="errorDatos" *ngIf="idEtapa.invalid && (idEtapa.dirty )">
+        Error, el identificador debe ser de 1 o 2 cifras
     </div>
-    <label for="dur">Duración: </label><br />
-    <input id="dur" type="text" placeholder="3:40..." formControlName="duracion"><br />
-    <div *ngIf="duracion.invalid && (duracion.dirty )">
-        hola
+    <input id="dur" type="text" placeholder="Duracion" formControlName="duracion"><br />
+    <div class="errorDatos" *ngIf="duracion.invalid && (duracion.dirty )">
+        Error, la duracion debe ser en el formato HH:MM
     </div>
-    <label for="long">Longitud (en kilometros): </label><br />
-    <input id="long" type="text" placeholder="1km..." formControlName="longitud"><br />
-    <div *ngIf="longitud.invalid && (idEtapa.dirty )">
-        hola
+    <input id="long" type="text" placeholder="Longitud de la Etapa (km's)" formControlName="longitud"><br />
+    <div class="errorDatos" *ngIf="longitud.invalid && (idEtapa.dirty )">
+        Error, los kilometros deben terminar en "km"
     </div>
-    <label for="img">Imagen de la etapa: </label><br />
-    <input id="img" type="file"  formControlName="img"><br />
-    <div *ngIf="idEtapa.invalid && (idEtapa.dirty )">
-        hola
+    <div id="insertarArchivo">
+      Imagen de la Etapa
+      <input id="img" type="file"  formControlName="img">
+      <label for="img">Archivo</label>
     </div>
-    <input type="submit" value="Enviar">
+    <br />
+    <div class="errorDatos" *ngIf="idEtapa.invalid && (idEtapa.dirty )">
+        Error, el archivo introducido no es una imagen
+    </div>
+    <input id="btnAnadir" type="submit" value="AÑADIR">
     <p>Valor: {{ formulario.value }}</p>
 </form>
