@@ -14,7 +14,7 @@ export class AltaEtapaComponent implements OnInit {
   etapa:Etapa;
   respuesta :any;
   r:any;
-  ficheroBase64: string;
+  ficheroBase64: any;
 
 
   constructor(private enviar:EnviarService) {
@@ -67,7 +67,7 @@ export class AltaEtapaComponent implements OnInit {
     const reader = new FileReader()
 
     reader.addEventListener('load', (event: any) => {
-      file.text().then(texto => this.ficheroBase64 = texto)
+      file.text().then(texto => this.ficheroBase64 = reader.result)
     })
     reader.readAsDataURL(file);
   }

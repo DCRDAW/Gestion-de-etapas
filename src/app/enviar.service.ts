@@ -63,7 +63,8 @@ export class EnviarService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Access-Control-Allow-Origin':'*'
+        'Access-Control-Allow-Origin':'*',
+        'Acces-Control-Allow-Headers':'*'
       })
     }
     console.log(bodyJSON)

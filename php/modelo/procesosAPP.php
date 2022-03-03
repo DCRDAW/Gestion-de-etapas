@@ -69,15 +69,29 @@ class procesosAPP{
 
 
   function decofificacionImagnes($imagen64){
-//eliminamos data:image/png; y base64, de la cadena que tenemos
-
-    list(, $imagen64) = explode(';', $imagen64);
-    list(, $imagen64) = explode(',', $imagen64);
+/*//eliminamos data:image/png; y base64, de la cadena que tenem
+    $imagen64 = explode(',', $imagen64);
+    //list(, $imagen64) = explode(';', $imagen64);
+    //list(, $imagen64) = explode(',', $imagen64);
 //Decodificamos $Base64Img codificada en base64.
-    $imagen64 = base64_decode($imagen64);
+    $imagen64 = base64_decode($imagen64, true);
 //escribimos la información obtenida en un archivo llamado
 //unodepiera.png para que se cree la imagen correctamente
+    fwrite($)
     file_put_contents('imagenes/unodepiera.png', $imagen64);
-    return json_encode("<img src='unodepiera.png' alt='unodepiera' />");
+    return json_encode("<img src='unodepiera.png' alt='unodepiera' />");*/
+    $file = fopen("imagenes/imagen1.png", "w+");
+
+    //Actualizamos la fila de nuestro cuaderno con la nueva ruta
+
+
+
+
+
+    $data = explode(',', $imagen64);
+
+    //Crear imagen
+    fwrite($file, base64_decode($data[1]));
+    fclose($file);
   }
 }
