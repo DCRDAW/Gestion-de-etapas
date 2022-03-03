@@ -1,3 +1,7 @@
-# Gestion-de-etapas
-aaaaaaa
-ooooooo
+# 2122_2DAW
+
+Equipo 3
+
+  -Diego
+  -Kilian
+  -Pablo

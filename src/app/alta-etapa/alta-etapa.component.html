@@ -1,0 +1,36 @@
+<form id="altaEtapa" [formGroup]="formulario" (ngSubmit)="anyadir()">
+    <h1>AÑADIR ETAPA</h1>
+    <input id="idEtapa" type="text" placeholder="Identificador de la Etapa" formControlName="idEtapa"><br />
+    <div class="errorDatos" *ngIf="idEtapa.invalid && (idEtapa.dirty )">
+        Error, el identificador debe ser de 1 o 2 cifras
+    </div>
+    <input id="dur" type="text" placeholder="Duracion (HH:MM)" formControlName="duracion"><br />
+    <div class="errorDatos" *ngIf="duracion.invalid && (duracion.dirty )">
+        Error, la duracion debe ser en el formato HH:MM
+    </div>
+    <input id="long" type="text" placeholder="Longitud de la Etapa (km's)" formControlName="longitud"><br />
+    <div class="errorDatos" *ngIf="longitud.invalid && (longitud.dirty )">
+        Error, en la validacion del campo longitud
+    </div>
+    <div id="insertarArchivo">
+      Imagen de la Etapa
+      <input #imageInput id="img" type="file"  formControlName="img" accept="imagen/*" (change)="procesarImagen(imageInput)">
+      <label for="img">Archivo</label>
+    </div>
+  <div>
+    <select  formControlName="select">
+       <option *ngFor="let res of respuesta" value="{{res.idPoblacion}}">{{res.nombrePoblacion}}</option>
+
+    </select><br/>
+    <select  formControlName="select">
+      <option *ngFor="let res of respuesta" value="{{res.idPoblacion}}">{{res.nombrePoblacion}}</option>
+
+    </select>
+  </div>
+    <br />
+    <div class="errorDatos" *ngIf="idEtapa.invalid && (idEtapa.dirty )">
+        <!--Error, el archivo introducido no es una imagen-->
+    </div>
+    <input id="btnAnadir"  type="submit" value="AÑADIR">
+
+</form>
